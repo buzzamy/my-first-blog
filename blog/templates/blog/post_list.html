@@ -1,19 +1,21 @@
-<html>
-    <head>
-        <title>Amy's blog</title>
-    </head>
-    <body>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 07.14.2015, 2:52pm</p>
-            <h2><a href="">My first post</a></h2>
-            <p>BuzzDog has the best blog name so far.</p>
-        </div>
-
-        <div>
-            <p>published: 07.14.2015, 2:58</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Blah blah blah.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
